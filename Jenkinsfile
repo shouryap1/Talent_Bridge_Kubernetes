@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh '''
                 [ -d Talent_Bridge_Kubernetes ] && rm -rf Talent_Bridge_Kubernetes
-                git clone https://github.com/ritik-rkg/Talent_Bridge_Kubernetes.git
+                git clone https://github.com/shouryap1/Talent_Bridge_Kubernetes.git
                 '''
             }
         }
@@ -56,14 +56,14 @@ pipeline {
             steps {
                 sh '''
                 cd Talent_Bridge_Kubernetes/frontend
-                docker build -t ritikgupta0114/frontend:latest .
+                docker build -t shouryap1/frontend:latest .
                 '''
             }
         }
         stage("Stage 6: Scan Docker Image for frontend") {
             steps {
                 sh '''
-                trivy image ritikgupta0114/frontend:latest
+                trivy image shouryap1/frontend:latest
                 '''
             }
         }
@@ -71,7 +71,7 @@ pipeline {
             steps {
                 sh '''
                 docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
-                docker push ritikgupta0114/frontend:latest
+                docker push shouryap1/frontend:latest
                 '''
             }
         }
@@ -81,14 +81,14 @@ pipeline {
             steps {
                 sh '''
                 cd Talent_Bridge_Kubernetes/backend
-                docker build -t ritikgupta0114/backend:latest .
+                docker build -t shouryap1/backend:latest .
                 '''
             }
         }
         stage("Stage 9: Scan Docker Image for backend") {
             steps {
                 sh '''
-                trivy image ritikgupta0114/backend:latest
+                trivy image shouryap1/backend:latest
                 '''
             }
         }
@@ -98,7 +98,7 @@ pipeline {
             steps {
                 sh '''
                 docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
-                docker push ritikgupta0114/backend:latest
+                docker push shouryap1/backend:latest
                 '''
             }
         }
