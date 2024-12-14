@@ -1,6 +1,6 @@
 - name: Clone the Kubernetes manifests repository
   git:
-    repo: https://github.com/ritik-rkg/Talent_Bridge_Kubernetes.git
+    repo: https://github.com/shouryap1/Talent_Bridge_Kubernetes.git
     dest: /tmp/Talent_Bridge_Kubernetes
   register: repo_status
 
