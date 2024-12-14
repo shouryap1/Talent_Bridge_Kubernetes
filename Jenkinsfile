@@ -94,7 +94,7 @@ pipeline {
         }
 
 
-        stage("Stage 10: Push Backend Docker Image") {
+        stage("Stage 10: Push the Backend Docker Image") {
             steps {
                 sh '''
                 docker login -u ${DOCKERHUB_CRED_USR} -p ${DOCKERHUB_CRED_PSW}
