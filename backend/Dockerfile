@@ -12,6 +12,7 @@ COPY package*.json ./
 RUN npm install 
 
 RUN npm install morgan
+
 # Copy app source code
 COPY . .
 
