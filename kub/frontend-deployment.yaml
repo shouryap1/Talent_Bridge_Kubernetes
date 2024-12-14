@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: my-react-app
-          image: ritikgupta0114/frontend:latest
+          image: shouryap1/frontend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 5173
