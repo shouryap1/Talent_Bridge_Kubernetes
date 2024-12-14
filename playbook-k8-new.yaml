@@ -5,6 +5,12 @@
       debug:
         msg: "The ansible_user is {{ ansible_user }}"
 
+    - name: Remove all containers
+      command: docker container prune -f
+
+    - name: Remove all images
+      command: docker image prune -a -f
+
     - name: Clone Repository
       include_role:
         name: clone_repo
