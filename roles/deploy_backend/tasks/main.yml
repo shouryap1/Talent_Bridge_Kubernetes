@@ -1,0 +1,11 @@
+- name: Apply Backend Deployment
+  command: kubectl apply -f /tmp/Talent_Bridge_Kubernetes/kub/backend-deployment.yaml
+
+- name: Apply Backend Service
+  command: kubectl apply -f /tmp/Talent_Bridge_Kubernetes/kub/backend-service.yaml
+
+- name: Apply Backend Secret
+  command: kubectl apply -f /tmp/Talent_Bridge_Kubernetes/kub/backend-secret.yaml
+
+- name: Apply Backend HPA
+  command: kubectl apply -f /tmp/Talent_Bridge_Kubernetes/kub/backend-hpa.yaml
